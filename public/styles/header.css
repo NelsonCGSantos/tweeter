@@ -1,0 +1,21 @@
+header {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #3f4b69;
+background-image: url("https://www.transparenttextures.com/patterns/white-wall-3.png");
+}
+
+header div {
+  margin-bottom: 10px;
+}
+
+header img {
+  display: block;
+  margin: 0 auto;
+}
+
+header h2 {
+  color: aqua;
+  margin: 0;
+}
