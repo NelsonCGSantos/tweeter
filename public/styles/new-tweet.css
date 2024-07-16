@@ -40,3 +40,6 @@
     font-size: 1em;
   }
   
+  .over-limit {
+    color: red;
+  }
