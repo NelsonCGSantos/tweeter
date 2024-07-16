@@ -6,9 +6,9 @@ $(document).ready(function () {
 
     // Color change
     if (charLeft < 0) {
-      $(this).siblings("div").find(".counter").addClass("over-limit");
+      $(this).siblings("div").find(".counter").addClass("counter-red");
     } else {
-      $(this).siblings("div").find(".counter").removeClass("over-limit");
+      $(this).siblings("div").find(".counter").removeClass("counter-red");
     }
   });
 });
