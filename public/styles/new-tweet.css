@@ -1,0 +1,42 @@
+
+.new-tw {
+    background-color: #f5f8fa;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .new-tw h2 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+  }
+  
+  .new-tw textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccd6dd;
+    border-radius: 5px;
+  }
+  
+  .new-tw div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .new-tw button {
+    background-color: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .new-tw .counter {
+    font-size: 1em;
+  }
+  
