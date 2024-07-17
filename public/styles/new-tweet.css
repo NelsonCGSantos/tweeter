@@ -43,3 +43,14 @@
   .counter-red {
     color: red;
   }
+
+  .error-message {
+    color: red;
+    background-color: #f8d7da;
+    border: 1px solid #f5c2c7;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: none; /* Hide it without prompt */
+  }
+  
