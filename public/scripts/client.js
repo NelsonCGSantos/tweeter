@@ -61,6 +61,19 @@ $(document).ready(function () {
   $form.on("submit", function(event) {
     event.preventDefault();
 
+    const $tweetText = $(this).find("tweet-text");
+    const tweetContent = $tweetText.val().trim();
+
+    if (!tweetContent) {
+      alert("Tweet content cannot be empty.");
+      return;
+    }
+
+    if (tweetContent.length > 140) {
+      alert("Tweet content exceeds the maximum length of 140 characters.");
+      return;
+    }
+
     const formData = $(this).serialize();
 
     $.ajax({
