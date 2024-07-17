@@ -4,7 +4,7 @@ nav {
     top: 0;
     height: 120px;
     width: 100%;
-    background-color: #d66767;
+    background-color: #009eb3;
     color: #FFFFFF;
     padding: 0 1.5em;
     display: flex;
@@ -12,6 +12,7 @@ nav {
     align-items: center;
     z-index: 1000;
     font-family: 'Bungee', sans-serif;
+    background-image: url("https://www.transparenttextures.com/patterns/white-wall-3.png");
 }
 
 nav span {
@@ -33,7 +34,7 @@ nav .new-tweet {
   nav .new-tweet i {
     font-size: 1.5em;
     margin-top: 5px;
-    color: #09c7f2; /* Change this to your desired color */
+    color: #eb8005; /* Change this to your desired color */
   }
   
 
