@@ -1,10 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 $(document).ready(function () {
+  // Function to create a tweet element
   const createTweetElement = function(tweet) {
     const $tweet = $(`
         <article class="tweet">
@@ -31,7 +26,7 @@ $(document).ready(function () {
     return $tweet;
   };
 
-  // Render tweets
+  // Function to render multiple tweets
   const renderTweets = function(tweets) {
     $("#tweets-container").empty(); // Clear the tweets container
     for (const tweet of tweets) {
@@ -40,32 +35,43 @@ $(document).ready(function () {
     }
   };
 
-  // Testing
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
+  // Function to load tweets from the server
+  const loadTweets = function() {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      success: function(tweets) {
+        renderTweets(tweets);
       },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
+      error: function(error) {
+        console.error("Error loading tweets:", error);
       },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense , donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
+    });
+  };
 
-  // Render Test
-  renderTweets(data);
+  // Load tweets on page load
+  loadTweets();
+
+  // Event listener for tweet form submission
+  const $form = $(".new-tweet form");
+  $form.on("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Serialize the form data
+    const formData = $(this).serialize();
+
+    // Send the serialized data via AJAX
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: formData,
+      success: function(response) {
+        console.log("Tweet submitted successfully:", response);
+        loadTweets(); // Reload tweets to include the new tweet
+      },
+      error: function(error) {
+        console.error("Error submitting tweet:", error);
+      },
+    });
+  });
 });
