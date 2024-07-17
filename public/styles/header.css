@@ -2,7 +2,7 @@ header {
   width: 100%;
   text-align: center;
   padding: 20px 0;
-  background-color: #99b2f1;
+  background-color: #bc7272;
 background-image: url("https://www.transparenttextures.com/patterns/white-wall-3.png");
 }
 
@@ -16,6 +16,6 @@ header img {
 }
 
 header h2 {
-  color: aqua;
+  color: rgb(255, 255, 255);
   margin: 0;
 }
