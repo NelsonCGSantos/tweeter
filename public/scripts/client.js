@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function () {
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`
           <article class="tweet">
             <header>
@@ -32,7 +32,7 @@ $(document).ready(function () {
   };
 
   // Render tweets
-  const renderTweets = function (tweets) {
+  const renderTweets = function(tweets) {
     $("#tweets-container").empty(); // Clear the tweets container
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
@@ -41,14 +41,14 @@ $(document).ready(function () {
   };
 
   // Load tweets from the server
-  const loadTweets = function () {
+  const loadTweets = function() {
     $.ajax({
       url: "/tweets",
       method: "GET",
-      success: function (tweets) {
+      success: function(tweets) {
         renderTweets(tweets);
       },
-      error: function (error) {
+      error: function(error) {
         console.error("Error loading tweets:", error);
       },
     });
@@ -58,10 +58,10 @@ $(document).ready(function () {
 
   // Event listener for form submission
   const $form = $(".new-tweet form");
-  $form.on("submit", function (event) {
+  $form.on("submit", function(event) {
     event.preventDefault();
 
-    const $tweetText = $(this).find("tweet-text");
+    const $tweetText = $(this).find("#tweet-text");
     const tweetContent = $tweetText.val().trim();
 
     if (!tweetContent) {
@@ -82,8 +82,7 @@ $(document).ready(function () {
       data: formData,
       success: function(response) {
         console.log("Tweet submitted successfully:", response);
-        const $newTweet = createTweetElement(response);
-        $("#tweets-container").prepend($newTweet); // Prepend the new tweet
+        loadTweets(); // Refetch tweets from the server
         $form[0].reset(); // Reset the form after submission
         $(".counter").text(140); // Reset the counter
       },
