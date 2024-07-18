@@ -89,8 +89,10 @@ $(document).ready(function () {
         $form[0].reset(); // Reset the form after submission
         $(".counter").text(140); // Reset the counter
       },
-      error: function (error) {
+      error: function(error) {
         console.error("Error submitting tweet:", error);
+        $errorMessage.text("Error submitting tweet. Please try again.");
+        $errorMessage.slideDown();
       },
     });
   });
