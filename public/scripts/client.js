@@ -7,27 +7,27 @@ $(document).ready(function () {
 
   const createTweetElement = function (tweet) {
     const $tweet = $(`
-        <article class="tweet">
-          <header>
-            <div class="tweet-user">
-              <img src="${escape(tweet.user.avatars)}" alt="User avatar">
-              <span>${escape(tweet.user.name)}</span>
+          <article class="tweet">
+            <header>
+              <div class="tweet-user">
+                <img src="${escape(tweet.user.avatars)}" alt="User avatar">
+                <span>${escape(tweet.user.name)}</span>
+              </div>
+              <span class="tweet-handle">${escape(tweet.user.handle)}</span>
+            </header>
+            <div class="tweet-content">
+              <p>${escape(tweet.content.text)}</p>
             </div>
-            <span class="tweet-handle">${escape(tweet.user.handle)}</span>
-          </header>
-          <div class="tweet-content">
-            <p>${escape(tweet.content.text)}</p>
-          </div>
-          <footer>
-            <span>${timeago.format(tweet.created_at)}</span>
-            <div class="tweet-icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
-      `);
+            <footer>
+              <span>${timeago.format(tweet.created_at)}</span>
+              <div class="tweet-icons">
+                <i class="fas fa-flag"></i>
+                <i class="fas fa-retweet"></i>
+                <i class="fas fa-heart"></i>
+              </div>
+            </footer>
+          </article>
+        `);
     return $tweet;
   };
 
@@ -89,7 +89,7 @@ $(document).ready(function () {
         $form[0].reset(); // Reset the form after submission
         $(".counter").text(140); // Reset the counter
       },
-      error: function(error) {
+      error: function (error) {
         console.error("Error submitting tweet:", error);
         $errorMessage.text("Error submitting tweet. Please try again.");
         $errorMessage.slideDown();

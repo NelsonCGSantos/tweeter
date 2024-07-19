@@ -3,7 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -28,11 +28,29 @@ body {
 }
 
 main {
-  width: 90%;
-  margin: 0 auto;
-  background-color: inherit;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 1400px;
+  font-size: 24px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: black;
+  overflow-wrap: break-word;
 }
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+@media only screen and (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    margin-top: 175px;
+    justify-content: space-evenly;
+  }
+
+  #feed {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    padding-top: 0;
+  }
+}
