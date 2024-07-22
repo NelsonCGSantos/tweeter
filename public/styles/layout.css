@@ -27,14 +27,12 @@ body {
   padding-top: 120px;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 1400px;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
-  color: black;
-  overflow-wrap: break-word;
+main .container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: inherit;
+  padding: 2em 1.5em;
 }
 
 @media only screen and (min-width: 1024px) {

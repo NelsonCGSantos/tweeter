@@ -45,39 +45,35 @@
 </head>
 
 <body>
-  <!-- Nav  -->
+  <!-- Top nav bar (fixed) -->
   <nav>
-    <div class="left-content">
-      <div class="new-tweet">
-        <span>Write a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
-      </div>
+    <span class="tweeter-text">Tweeter</span>
+    <div class="write-text">
+      <span>Write a new tweet</span>
+      <i class="fas fa-angle-double-down"></i>
     </div>
-    <div class="center-content">
-      <span>Tweeter</span>
-    </div>
-    <div class="right-content"></div>
   </nav>
-  
 
-  <!-- Header -->
-  <header>
-    <div>
-      <img src="/images/profile-hex.png" alt="Profile Picture">
-    </div>
-    <br>
-    <div>
-      <h2>Username</h2>
-    </div>
-  </header>
+  <div class="lower-page">
+    <header id="page-header">
+      <div>
+        <img src="/images/profile-hex.png" alt="User Avatar">
+      </div>
+      <br>
+      <div>
+        <h2>Nelson</h2>
+      </div>
+    </header>
 
   <!-- Page-specific (main) content here -->
+   
   <main class="container">
-    
+
     <section class="new-tweet">
       
       <form class="new-tw" action="/tweets" method="POST">
         <label for="tweet-text">What are you humming about?</label>
+        <p></p>
         <textarea name="text" id="tweet-text"></textarea>
         <div>
           <button type="submit">Tweet</button>
@@ -88,7 +84,7 @@
     </section>
      <!-- Tweet Container -->
     <section id="tweets-container">
-    </section>
+     </section>
   </main>
 </body>
 </html>
