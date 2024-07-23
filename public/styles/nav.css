@@ -51,15 +51,33 @@ nav {
     from {
       transform: translateY(0);
     }
-  
     to {
       transform: translateY(-5px);
     }
   }
   
+  /* For Tablet */
   @media only screen and (max-width: 1024px) {
     nav {
-      background-color: transparent;
+      flex-direction: column;
+      height: auto;
+      padding: 10px 0;
+    }
   
+    nav .write-text {
+      margin-top: 10px;
+    }
+  }
+  
+  /* For Mobile */
+  @media only screen and (max-width: 767px) {
+    nav {
+      flex-direction: column;
+      height: auto;
+      padding: 10px 0;
+    }
+  
+    nav .write-text {
+      margin-top: 10px;
     }
   }

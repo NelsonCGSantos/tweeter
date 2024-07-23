@@ -52,3 +52,27 @@ main .container {
     padding-top: 0;
   }
 }
+
+/* For Tablet */
+@media only screen and (max-width: 1024px) and (min-width: 768px) {
+  main .container {
+    width: 100%;
+    padding: 1em;
+  }
+
+  .new-tweet, #tweets-container {
+    width: 100%;
+  }
+}
+
+/* For Mobile */
+@media only screen and (max-width: 767px) {
+  main .container {
+    width: 100%;
+    padding: 0.5em;
+  }
+
+  .new-tweet, #tweets-container {
+    width: 100%;
+  }
+}

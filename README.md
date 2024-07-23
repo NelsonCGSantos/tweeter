@@ -23,6 +23,6 @@ This repository is the starter code for the project: Students will fork and clon
 
 ![Homepage](docs/Homepage.png)
 
-![Hover Functionality](<docs/Hover Functionality.png>)
+![Past tweet with hover effects](docs/old_tweet_with_hover.png)
 
 ![Length error](<docs/Length error.png>)
